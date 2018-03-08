@@ -1,10 +1,10 @@
-import { Injectable }                           from '@angular/core';
+import { Injectable, OnDestroy }                from '@angular/core';
 import { Subject, Observable }                  from 'rxjs/RX';
 import { IMockData }                            from '../../Model/IMockData.Model';
 import { MockData }                             from '../../SeedData/MockData';
 
 @Injectable()
-export class CalculationService {
+export class CalculationService  implements OnDestroy {
   constructor() { }
   getCalculatedMockData(): Observable<IMockData[]> {
     const subjectMockData = new Subject<IMockData[]>();
@@ -14,5 +14,9 @@ export class CalculationService {
                         subjectMockData.complete();
                      }, 5000);
     return subjectMockData;
+  }
+
+  ngOnDestroy() {
+    console.log('Service destroy');
   }
 }

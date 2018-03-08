@@ -21,7 +21,7 @@
                                [min]=1
                                required
                                [(ngModel)]="entity.mainLimit"
-                               class="form-control" />
+                               class="form-control mainLimit" />
                       </div>
                     <em *ngIf="frmCalculation.controls.mainLimit?.invalid && (frmCalculation.controls.mainLimit?.touched) && (frmCalculation.controls.mainLimit?.errors.min) && !(frmCalculation.controls.mainLimit?.errors?.required)" class="min-validation">The input should be greater than zero</em>
                     <div class="form-group" [ngClass]="{'error': frmCalculation.controls.mainRetention?.invalid && frmCalculation.controls.mainRetention?.touched}">
@@ -34,7 +34,7 @@
                                [min]=1
                                required
                                [(ngModel)]="entity.mainRetention"
-                               class="form-control" />
+                               class="form-control mainRetention" />
                       </div> 
                       <em *ngIf="frmCalculation.controls.mainRetention?.invalid && (frmCalculation.controls.mainRetention?.touched) && (frmCalculation.controls.mainRetention?.errors.min) && !(frmCalculation.controls.mainRetention?.errors?.required)" class="min-validation">The input should be greater than zero</em>
                       <div class="form-group">
@@ -68,7 +68,7 @@
                   <table class="table table-bordered table-condensed table-striped">
                       <thead class="thead-dark">
                         <tr>
-                          <th scope="col">Reference Date</th>
+                          <th scope="col" class="table-header">Reference Date</th>
                           <th scope="col">BenchMark-1</th>
                           <th scope="col">BenchMark-2</th>
                         </tr>

@@ -11,7 +11,6 @@ export const min = (min: number): ValidatorFn => {
         ret = { min: true };
       }
     }
-
     return ret;
   };
 };
